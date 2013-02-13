@@ -1,20 +1,14 @@
 App = Ember.Application.create();
 
-App.ApplicationController = Em.Controller.extend({
-    firstName: "Trek",
-    lastName: "Glowacki",
-    beers:beerList
-});
-
 App.Beer = Em.Object.extend({
-    name: null,
+    name: "",
     pct: null,
     desc: null,
     country: null,
     score: 0,
     matches: function(filter) {
         if(filter.length==0) { return true;}
-        if(this.name.toLowerCase().contains(filter)) {
+        if(this.name.toLowerCase().indexOf(filter) !== -1) {
             return true;
         }
         return false;
