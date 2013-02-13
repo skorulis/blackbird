@@ -1,0 +1,34 @@
+body {
+    font-family: helvetica;
+    font-size: 14pt;
+    background-color: #c0e0f0;
+}
+
+ul {
+
+}
+
+li {
+    display: inline-block;
+    border-width:4pt;
+    border-color: #FFFFFF;
+    border-style: solid;
+
+    width:300px;
+    border-radius: 5pt;
+    margin:5pt;
+}
+
+p.center {
+    background-color: #e0e0e0;
+    margin: 0px;
+    padding: 5pt;
+    text-align: center;
+    margin-top: -4pt;
+    padding-top: 8pt;
+}
+
+img {
+    width:100%;
+    margin: 0px;
+}

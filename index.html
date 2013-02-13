@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script type="text/javascript" src="js/ember.js"></script>
+    <script type="text/javascript" src="js/beer.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<script type="text/x-handlebars">
+    {{view App.SearchTextField placeholder="Search"}}
+    <button {{action "filterBeers" target="App.beersController"}}>Go!</button>
+    <ul>
+    {{#each beer in App.beersController.content}}
+        <li>
+
+            <img {{bindAttr src="beer.img"}} />
+            <p class="center">{{beer.name}}
+                {{#if beer.pct}}
+                    {{beer.pct}}%
+                {{/if}}
+                <br/>
+                {{#if beer.desc}}
+                    {{beer.desc}}<br/>
+                {{/if}}
+
+            </p>
+
+        </li>
+    {{/each}}
+</script>
+
+
+</body>
+</html>
