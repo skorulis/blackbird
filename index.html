@@ -15,18 +15,18 @@
     <ul>
     {{#each beer in App.beersController.content}}
         <li>
-
-            <img {{bindAttr src="beer.img"}} />
             <p class="center">{{beer.name}}
                 {{#if beer.pct}}
-                    {{beer.pct}}%
+                {{beer.pct}}%
                 {{/if}}
                 <br/>
                 {{#if beer.desc}}
-                    {{beer.desc}}<br/>
+                {{beer.desc}}<br/>
                 {{/if}}
 
             </p>
+            <img {{bindAttr src="beer.img"}} />
+
 
         </li>
     {{/each}}
