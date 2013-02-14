@@ -25,7 +25,7 @@ function addAllBeers() {
     }));
 
     ret.push(App.Beer.create({
-        name:'Webster&qouts. ',
+        name:'Webster\'s. ',
         pct:null,
         desc:'Shit bloke, shit beer. ',
         score:1,
@@ -73,7 +73,7 @@ function addAllBeers() {
     }));
 
     ret.push(App.Beer.create({
-        name:'Samuel Smith&qouts Extra stout .',
+        name:'Samuel Smith\'s Extra stout .',
         pct:4.5,
         desc:'Like Guinness with a taste of ashtray. ',
         score:4,

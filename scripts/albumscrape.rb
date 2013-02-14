@@ -34,7 +34,7 @@ def downloadChunk(url)
 
 
 		hash = Hash[];
-		hash["name"] = lines[0].gsub(/'/,"&qout");
+		hash["name"] = lines[0].gsub("'", "\\\\'");
 		hash["desc"] = lines[1];
 		hash["img"] = value["source"];
 		hash["pct"] = pct;
