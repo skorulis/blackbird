@@ -4,7 +4,7 @@ require 'httpclient'
 require 'json'
 
 # Need to generate a new token every hour or so
-@token = "AAACEdEose0cBAPtu7ptDvcYpYrUK3JzRQk423rZAm9VLaCZAWQ7ABW3n5ltAAEokSs26BgxyszkZAYOPevaZAPx3H4kjQmFxhlZCMWG9s3AZDZD";
+@token = "AAACEdEose0cBAN4eQZCgW0SGhxjC5DCizNmgDK8McXfK7HnOStZBkdi9eRQWZATqLo3pggBFMvCjrq8JR4yuOTryH3tvZBmnxZA7m2V4KZAAZDZD";
 @album = "10151283325498745"
 @firstUrl = "https://graph.facebook.com/"+@album+"?fields=photos.limit(10)&access_token="+@token;
 @allBeers = [];
@@ -34,7 +34,7 @@ def downloadChunk(url)
 
 
 		hash = Hash[];
-		hash["name"] = lines[0];
+		hash["name"] = lines[0].gsub(/'/,"&qout");
 		hash["desc"] = lines[1];
 		hash["img"] = value["source"];
 		hash["pct"] = pct;
@@ -46,16 +46,19 @@ def downloadChunk(url)
 end
 
 def dumpJSToFile(filename)
+    puts "function addAllBeers() {"
+    puts "var ret = [];"
 	@allBeers.each{|beer|
-		puts "this.allData.push(App.Beer.create({"
+		puts "ret.push(App.Beer.create({"
 		puts "\tname:'"+beer["name"]+"',"
 		puts "\tpct:"+(beer["pct"]||"") +","
 		puts "\tdesc:'"+beer["desc"]+"',"
 		puts "\tscore:"+(beer["score"]||"") +","
 		puts "\timg:'"+beer["img"]+"'"
 		puts "}));\n\n"
-
-	}	
+	}
+	puts "return ret";
+	puts "}"
 
 end
 
