@@ -52,7 +52,7 @@ def dumpJSToFile(filename)
 		puts "\tpct:"+(beer["pct"]||"") +","
 		puts "\tdesc:'"+beer["desc"]+"',"
 		puts "\tscore:"+(beer["score"]||"") +","
-		puts "\timg:'"+beer["img"]
+		puts "\timg:'"+beer["img"]+"'"
 		puts "}));\n\n"
 
 	}	

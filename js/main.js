@@ -37,7 +37,7 @@ App.beersController = Em.ArrayController.create({
             pct:4.4,
             desc:'Black and average. ',
             score:2,
-            img:'http://sphotos-b.ak.fbcdn.net/hphotos-ak-prn1/s720x720/485855_10151283325868745_1357546171_n.jpg
+            img:'http://sphotos-b.ak.fbcdn.net/hphotos-ak-prn1/s720x720/485855_10151283325868745_1357546171_n.jpg'
         }));
 
         this.allData.push(App.Beer.create({
@@ -45,7 +45,7 @@ App.beersController = Em.ArrayController.create({
             pct:4.0,
             desc:'',
             score:6,
-            img:'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/s720x720/536444_10151283326338745_1988442948_n.jpg
+            img:'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/s720x720/536444_10151283326338745_1988442948_n.jpg'
         }));
 
         this.allData.push(App.Beer.create({
@@ -53,15 +53,15 @@ App.beersController = Em.ArrayController.create({
             pct:null,
             desc:'',
             score:8,
-            img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-ash4/s720x720/1027_10151283326853745_295569657_n.jpg
+            img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-ash4/s720x720/1027_10151283326853745_295569657_n.jpg'
         }));
 
         this.allData.push(App.Beer.create({
-            name:'Websters. ',
+            name:'Webstes. ',
         pct:null,
             desc:'Shit bloke, shit beer. ',
             score:1,
-            img:'http://sphotos-a.ak.fbcdn.net/hphotos-ak-prn1/s720x720/65588_10151283327318745_1619592085_n.jpg
+            img:'http://sphotos-a.ak.fbcdn.net/hphotos-ak-prn1/s720x720/65588_10151283327318745_1619592085_n.jpg'
     }));
 
 this.allData.push(App.Beer.create({
@@ -69,7 +69,7 @@ this.allData.push(App.Beer.create({
     pct:null,
     desc:'',
     score:7,
-    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-snc7/s720x720/375874_10151283327863745_1299694311_n.jpg
+    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-snc7/s720x720/375874_10151283327863745_1299694311_n.jpg'
 }));
 
 this.allData.push(App.Beer.create({
@@ -77,7 +77,7 @@ this.allData.push(App.Beer.create({
     pct:5.0,
     desc:'Standard fare. ',
     score:6,
-    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/s720x720/60247_10151283328373745_1855333949_n.jpg
+    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/s720x720/60247_10151283328373745_1855333949_n.jpg'
 }));
 
 this.allData.push(App.Beer.create({
@@ -85,7 +85,7 @@ this.allData.push(App.Beer.create({
     pct:null,
     desc:'',
     score:7,
-    img:'http://sphotos-b.ak.fbcdn.net/hphotos-ak-ash4/s720x720/486956_10151296240913745_1196071675_n.jpg
+    img:'http://sphotos-b.ak.fbcdn.net/hphotos-ak-ash4/s720x720/486956_10151296240913745_1196071675_n.jpg'
 }));
 
 this.allData.push(App.Beer.create({
@@ -93,7 +93,7 @@ this.allData.push(App.Beer.create({
     pct:null,
     desc:'',
     score:7,
-    img:'http://sphotos-f.ak.fbcdn.net/hphotos-ak-ash3/s720x720/644125_10151296241128745_1291306382_n.jpg
+    img:'http://sphotos-f.ak.fbcdn.net/hphotos-ak-ash3/s720x720/644125_10151296241128745_1291306382_n.jpg'
 }));
 
 this.allData.push(App.Beer.create({
@@ -101,15 +101,15 @@ this.allData.push(App.Beer.create({
     pct:null,
     desc:'',
     score:7,
-    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-ash3/s720x720/32339_10151296241778745_603957055_n.jpg
+    img:'http://sphotos-g.ak.fbcdn.net/hphotos-ak-ash3/s720x720/32339_10151296241778745_603957055_n.jpg'
 }));
 
 this.allData.push(App.Beer.create({
-    name:'Samuel Smiths Extra stout .',
+    name:'Samuel Smits Extra stout .',
 pct:4.5,
     desc:'Like Guinness with a taste of ashtray. ',
     score:4,
-    img:'http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc7/s720x720/317875_10151303867498745_1098897913_n.jpg
+    img:'http://sphotos-c.ak.fbcdn.net/hphotos-ak-snc7/s720x720/317875_10151303867498745_1098897913_n.jpg'
 }));
 
 
