@@ -22,6 +22,10 @@ li {
     overflow: hidden;
 }
 
+li.hidden {
+    display:none;
+}
+
 p.center {
     background-color: #e0e0e0;
     margin: 0px;

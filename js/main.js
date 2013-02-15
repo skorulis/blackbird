@@ -6,6 +6,7 @@ App.Beer = Em.Object.extend({
     desc: null,
     country: null,
     score: 0,
+    hidden: false,
     matches: function(filter) {
         if(filter.length==0) { return true;}
         if(this.name.toLowerCase().indexOf(filter) !== -1) {
@@ -33,26 +34,23 @@ App.beersController = Em.ArrayController.create({
 
     init: function() {
         this.allData = addAllBeers();
+        this.set('content',this.allData);
         this.doFilter(this.search);
     },
     doFilter:function(term) {
+        var start = new Date().getTime();
         var tmp = [];
         console.log("filter " + term);
         for(var i=0; i < this.allData.length; ++i) {
-            if(this.allData[i].matches(term.toLowerCase())) {
-                tmp.push(this.allData[i]);
-                console.log("Adding " + this.allData[i].name);
-            } else {
-                console.log("Skipping ");
-            }
+            var beer = this.allData[i]
+            beer.set('hidden',!beer.matches(term.toLowerCase()))
+
         }
-        this.set('content',tmp);
+        //this.set('content',tmp);
+        var end = new Date().getTime();
+        var time = end - start;
+        console.log('Execution time: ' + time);
     }
 
 });
 
-
-
-
-
-console.log(beerList);

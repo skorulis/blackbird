@@ -14,11 +14,14 @@
     <button {{action "filterBeers" target="App.beersController"}}>Go!</button>
     <ul>
     {{#each beer in App.beersController.content}}
-        <li>
+        <li {{bindAttr class="beer.hidden"}}>
             <p class="center">
                 <button class="expand" {{action "filterBeers" target="App.beersController"}}>Go!</button>
                 {{beer.name}}
-
+                {{#if beer.score}}
+                    {{beer.score}}/10
+                {{/if}}
+                <br/>
                 {{#if beer.pct}}
                 {{beer.pct}}%
                 {{/if}}
