@@ -7,6 +7,7 @@ App.Beer = Em.Object.extend({
     country: null,
     score: 0,
     hidden: false,
+    expanded:false,
     matches: function(filter) {
         if(filter.length==0) { return true;}
         if(this.name.toLowerCase().indexOf(filter) !== -1) {
@@ -22,6 +23,11 @@ App.SearchTextField = Em.TextField.extend({
         console.log("change " + this.value);
         App.beersController.doFilter(this.value);
     }.observes("value")
+});
+
+App.BeerView = Em.View.create({
+    templateName:'beer-grid',
+    name:'test'
 });
 
 App.beersController = Em.ArrayController.create({

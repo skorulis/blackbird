@@ -21,13 +21,16 @@
                 {{#if beer.score}}
                     {{beer.score}}/10
                 {{/if}}
-                <br/>
-                {{#if beer.pct}}
-                {{beer.pct}}%
-                {{/if}}
-                <br/>
-                {{#if beer.desc}}
-                {{beer.desc}}<br/>
+
+                {{#if beer.expanded}}
+                    <br/>
+                    {{#if beer.pct}}
+                        {{beer.pct}}%
+                    {{/if}}
+                    <br/>
+                    {{#if beer.desc}}
+                        {{beer.desc}}<br/>
+                    {{/if}}
                 {{/if}}
 
             </p>
