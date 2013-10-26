@@ -4,28 +4,44 @@ require 'httpclient'
 require 'json'
 
 # Need to generate a new token every hour or so
-@token = "AAACEdEose0cBAPNO8DcnOIavWEYAYRHufL08bZCZCQt0piqvkp3EoimGTs1W16ZCHvkM7iDOiyZCHKNFWe0vzkOARnjNmgLnq6WFPFjtVgZDZD";
+@token = "CAACEdEose0cBAPFEdU1vrvuc5AzZCVPaZAiWIKgHTBVZBSrmJVTkZChZAv8Wi9K15T0cIZBbq2n3Td0huT0VVBK5eu5LpH2kVuEoJAWXJaqochMZA9qMdqtvd6JwnUXcrbk99QKXtr2iXkrslLvx6iaSaqXueQyAjaUCDzF2oSn3ZAfcvkwB5Knus5zocyZBeZAJ2lYEsch1bXNAZDZD";
 @album = "10151283325498745"
-@firstUrl = "https://graph.facebook.com/"+@album+"?fields=photos.limit(121)&access_token="+@token;
+@firstUrl = "https://graph.facebook.com/"+@album+"?fields=photos.limit(150)&access_token="+@token;
 @allBeers = [];
+@next = ""
 
 def downloadChunk(url)
-    puts url
+    #puts url
 	clnt = HTTPClient.new;
 	data = clnt.get_content(url)
 	result = JSON.parse(data)
-	photos = result["photos"]["data"];
+	#puts result
+	
+	if result["photos"] == nil
+		photos = result["data"];
+		paging = result["paging"]
+	else
+		photos = result["photos"]["data"];
+		paging = result["photos"]["paging"];
+	end
+	
 
+	@next = paging["next"];
+	
+	puts photos.count
+	
 	count = 0;
 	photos.each{|value|
 	    lines = value["name"].split(/\r?\n/);
-	    pct = lines[0][/[0-9].*?%/]
+	    pct = lines[0][/[0-9]?[0-9]?(\.[0-9]?)?%/]
 	    if pct
 	        lines[0][pct] = "";
 	        pct = pct.chop
 	    else
 	        pct = "null"
 	    end
+	    
+	    puts lines
 	    score = lines[1][/[0-9].10/]
 	    if score
 	        lines[1][score] = "";
@@ -68,6 +84,10 @@ def dumpJSToFile(filename)
 end
 
 downloadChunk(@firstUrl);
+while @next != nil do
+	downloadChunk(@next)
+	#@next = ""
+end
 
 dumpJSToFile("beer.js");
 
