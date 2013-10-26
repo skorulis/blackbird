@@ -11,12 +11,11 @@
 <body>
 <script type="text/x-handlebars">
     {{view App.SearchTextField placeholder="Search"}}
-    <button {{action "filterBeers" target="App.beersController"}}>Go!</button>
+    <button {{action "filterBeers" target="App.beersController"}}>Search</button>
     <ul>
     {{#each beer in App.beersController.content}}
         <li {{bindAttr class="beer.hidden"}}>
             <p class="center">
-                <button class="expand" {{action "filterBeers" target="App.beersController"}}>Go!</button>
                 {{beer.name}}
                 {{#if beer.score}}
                     {{beer.score}}/10
@@ -39,6 +38,7 @@
 
         </li>
     {{/each}}
+    </ul>
 </script>
 
 
