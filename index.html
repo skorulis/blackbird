@@ -8,11 +8,10 @@
     <script type="text/javascript" src="js/main.js"></script>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     
-    
-    
 </head>
 <body>
 <script type="text/x-handlebars">
+	<h1>The Big Album of Beers</h1>
     {{view App.SearchTextField placeholder="Search"}}
     <button {{action "filterBeers" target="App.beersController"}}>Search</button>
     <ul>
